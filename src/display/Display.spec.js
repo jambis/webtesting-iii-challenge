@@ -23,7 +23,7 @@ describe("Display Component", () => {
 
   it("Displays text closed and locked when closed and locked are true", () => {
     const { queryByText } = render(<Display closed={true} locked={true} />);
-    expect(queryByText(/locked/i)).toBeTruthy();
+    expect(queryByText(/^locked$/i)).toBeTruthy();
     expect(queryByText(/closed/i)).toBeTruthy();
   });
 
@@ -41,7 +41,7 @@ describe("Display Component", () => {
     const { getByText, queryByText } = render(
       <Display closed={true} locked={true} />
     );
-    const locked = getByText(/locked/i);
+    const locked = getByText(/^locked$/i);
     const closed = getByText(/closed/i);
     expect(locked.className).toMatch(/red-led/i);
     expect(closed.className).toMatch(/red-led/i);

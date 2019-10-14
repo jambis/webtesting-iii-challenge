@@ -22,7 +22,7 @@ describe("Controls Component", () => {
       />
     );
     const closeBtn = getByText(/close gate/i);
-    const lockBtn = getByText(/lock gate/i);
+    const lockBtn = getByText(/^lock gate$/i);
 
     expect(closeBtn.disabled).toBeFalsy();
     expect(lockBtn.disabled).toBeTruthy();
@@ -47,7 +47,7 @@ describe("Controls Component", () => {
       />
     );
     const closeBtn = getByText(/open gate/i);
-    const lockBtn = getByText(/lock gate/i);
+    const lockBtn = getByText(/^lock gate$/i);
 
     expect(closeBtn.disabled).toBeFalsy();
     expect(lockBtn.disabled).toBeFalsy();
