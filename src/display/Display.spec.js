@@ -28,9 +28,7 @@ describe("Display Component", () => {
   });
 
   it("Divs have classnames green-led when false", () => {
-    const { getByText, queryByText } = render(
-      <Display closed={false} locked={false} />
-    );
+    const { getByText } = render(<Display closed={false} locked={false} />);
     const unlock = getByText(/unlocked/i);
     const open = getByText(/open/i);
     expect(unlock.className).toMatch(/green-led/i);
@@ -38,9 +36,7 @@ describe("Display Component", () => {
   });
 
   it("Divs have classnames red-led when true", () => {
-    const { getByText, queryByText } = render(
-      <Display closed={true} locked={true} />
-    );
+    const { getByText } = render(<Display closed={true} locked={true} />);
     const locked = getByText(/^locked$/i);
     const closed = getByText(/closed/i);
     expect(locked.className).toMatch(/red-led/i);
